@@ -34,11 +34,22 @@ hbs.registerHelper('screamIt', (text) => {
   return text.toUpperCase();
 });
 
+hbs.registerHelper('whisperIt', (text) => {
+    return text.toUpperCase();
+})
+
 app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to my website'
   });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageHead: 'Welcome to the Projects',
+        greetingMessage: 'You are here'
+    })
 });
 
 app.get('/about', (req, res) => {
